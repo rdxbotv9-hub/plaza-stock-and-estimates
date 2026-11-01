@@ -6,6 +6,7 @@ export type BillLine = {
   name: string;
   unitPrice: number;
   qty: number;
+  unit?: string;
   custom?: boolean;
 };
 
@@ -188,7 +189,10 @@ export const bill = {
       },
     ]);
   },
-  update(id: string, patch: Partial<Pick<BillLine, "qty" | "unitPrice" | "name">>) {
+  update(
+    id: string,
+    patch: Partial<Pick<BillLine, "qty" | "unitPrice" | "name" | "unit">>,
+  ) {
     linesStore.set(
       linesStore.get().map((line) => (line.id === id ? { ...line, ...patch } : line)),
     );
