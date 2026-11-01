@@ -11,4 +11,4 @@
 
 - Keep replacement stock snapshots as valid JSON in `list/ALL_STOCK.json`, preserving duplicate supplier descriptions as `vendor`; this replaces removed rows and makes imports parse reliably.
 - Set the Vercel Nitro target only in `vercel.json`'s build command and use the Bun lockfile; Lovable keeps its managed Worker target and Vercel installs the same dependency versions.
-- Keep the Graceware photo catalogue separate from priced stock, with a static product manifest and CDN asset pointers; browsing stays independent of stock imports and external API availability.
+- Keep the Graceware photo catalogue separate from priced stock, with a static product manifest and local photo files under `public/images/graceware/` (rewritten from the original CDN pointers); browsing stays independent of stock imports and external API availability.
