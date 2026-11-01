@@ -16,7 +16,7 @@ describe("Graceware collection rules", () => {
     expect(catalogue).toHaveLength(186);
     for (const product of catalogue) {
       expect(product.name.length).toBeGreaterThan(0);
-      expect(product.image.startsWith("/__l5e/assets-v1/")).toBe(true);
+      expect(product.image.startsWith("/images/graceware/")).toBe(true);
       expect(product.sourceUrl.startsWith("https://graceware.shop/products/")).toBe(true);
       expect(Object.keys(product).some((key) => /price|rate|cost/i.test(key))).toBe(false);
     }
